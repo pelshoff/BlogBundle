@@ -1,0 +1,15 @@
+parameters:
+#    pelshoff_blog.example.class: Pelshoff\BlogBundle\Example
+
+services:
+#    pelshoff_blog.example:
+#        class: %pelshoff_blog.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
+    twig.extension.md5filter:
+        class: Pelshoff\BlogBundle\Twig\Md5Filter
+        tags:
+            - { name: twig.extension }
+    form.type_extension.help_message:
+            class: Pelshoff\BlogBundle\Form\Extension\HelpMessageTypeExtension
+            tags:
+              - { name: "form.type_extension", alias: "field" }

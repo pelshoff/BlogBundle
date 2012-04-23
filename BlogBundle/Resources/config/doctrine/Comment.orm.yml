@@ -1,0 +1,33 @@
+Pelshoff\BlogBundle\Entity\Comment:
+    type: entity
+    repositoryClass: Pelshoff\BlogBundle\Entity\CommentRepository
+    table: Pbb_Comment
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    manyToOne:
+        article:
+            targetEntity: Article
+            inversedBy: comments
+        author:
+            targetEntity: Author
+    fields:
+        type:
+            type: string
+        name:
+            type: string
+        emailAddress:
+            type: string
+            nullable: true
+        website:
+            type: string
+            nullable: true
+        message:
+            type: string
+        time:
+            type: datetime
+        ipAddress:
+            type: string
+        active:
+            type: boolean

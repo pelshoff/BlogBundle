@@ -1,0 +1,64 @@
+{% extends 'form_div_layout.html.twig' %}
+
+{% block field_row %}
+{% spaceless %}
+    <div class="control-group">
+		{{ form_errors(form) }}
+        {{ form_label(form) }}
+        <div class="controls">
+            {{ form_widget(form) }}
+        </div>
+    </div>
+{% endspaceless %}
+{% endblock field_row %}
+
+{% block field_widget %}
+    {{ parent() }}
+
+    {% if help is defined %}
+        <p class="help-block">{{ help }}</p>
+    {% endif %}
+{% endblock %}
+
+{% block generic_label %}
+{% spaceless %}
+    {% if required %}
+    {% set attr = attr|merge({'class': attr.class|default('') ~ ' required'}) %}
+    {% endif %}
+    <label class="control-label"{% for attrname,attrvalue in attr %} {{attrname}}="{{attrvalue}}"{% endfor %}>{{ label }}</label>
+{% endspaceless %}
+{% endblock %}
+
+{% block widget_attributes %}
+{% spaceless %}
+    id="{{ id }}" name="{{ full_name }}"{% if read_only %} readonly="readonly"{% endif %}{% if required %} required="required"{% endif %}{% if max_length %} maxlength="{{ max_length }}"{% endif %}{% if pattern %} pattern="{{ pattern }}"{% endif %}
+    {% for attrname,attrvalue in attr %}{{attrname}}="{{attrvalue}}" {% endfor %}
+{% endspaceless %}
+{% endblock widget_attributes %}
+
+{% block form_widget %}
+{% spaceless %}
+    {{ block('field_rows') }}
+    {{ form_rest(form) }}
+{% endspaceless %}
+{% endblock form_widget %}
+
+{% block field_rows %}
+{% spaceless %}
+    {% for child in form %}
+    {{ form_row(child) }}
+    {% endfor %}
+{% endspaceless %}
+{% endblock field_rows %}
+
+{% block field_errors %}
+{% spaceless %}
+{% if errors|length > 0 %}
+<ul class="alert alert-error">
+	{% for error in errors %}
+	<li>{{ error.messageTemplate|trans(error.messageParameters, 'validators') }}</li>
+	{% endfor %}
+</ul>
+{% endif %}
+{% endspaceless %}
+{% endblock field_errors %}

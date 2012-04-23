@@ -1,0 +1,14 @@
+<form class="commentForm form-horizontal" id="commentForm" method="post">
+	<fieldset>
+		<legend>Post a new comment to &quot;{{ article.name }}&quot;</legend>
+
+		{{ form_widget(form) }}
+
+		<div class="form-actions">
+
+			<button type="submit" class="btn btn-primary">Post!</button>
+			<button class="cancel">Cancel</button>
+
+		</div>
+	</fieldset>
+</form>

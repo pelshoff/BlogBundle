@@ -1,0 +1,9 @@
+<div class="article-info-container">
+	<span class="article-info article-info-time" title="This article was published on {{ article.publishTime|date('d F Y') }}"><i class="icon-calendar"></i> {{ article.publishTime|date('d F Y') }}</span>
+	<span class="article-info article-info-comments" title="{{ article.numberOfComments }} people have commented on this article"><i class="icon-comment"></i> {{ article.numberOfComments }}</span>
+	<span class="article-info article-info-social">
+		<a href="https://twitter.com/intent/tweet?text={{ article.name|url_encode }}+-+{{ url('article', { 'year': article.publishTime|date("Y"), 'month': article.publishTime|date("m"), 'article': article.url })|url_encode }}" title="Tweet this!"><i class="icon-retweet"></i></a>
+		<!--<a href="#twitter"><i class="icon-share"></i></a>
+		<a href="#twitter"><i class="icon-plus"></i></a>-->
+	</span>
+</div>

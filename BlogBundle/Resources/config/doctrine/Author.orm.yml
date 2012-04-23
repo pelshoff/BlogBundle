@@ -1,0 +1,16 @@
+Pelshoff\BlogBundle\Entity\Author:
+    type: entity
+    table: Pbb_Author
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    fields:
+        name:
+            type: string
+        image:
+            type: string
+        description:
+            type: text
+        active:
+            type: boolean

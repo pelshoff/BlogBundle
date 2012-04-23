@@ -1,0 +1,15 @@
+<div class="comment row" id="comment-{{ comment.id }}">
+    <div class="comment-header">
+        <div class="span7">
+            <p class="name">{% if comment.website %}<a href="{{ comment.website }}">{{ comment.name }}</a>{% else %}{{ comment.name }}{% endif %}</p>
+            <p class="time">{{ comment.time|date('H:i, d F Y') }}</p>
+        </div>
+        <div class="span2 avatarContainer">
+            <img src="http://www.gravatar.com/avatar/{{ comment.emailAddress|md5 }}?s=75&d=retro" width="75" height="75" />
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="span7">
+        <p>{{ comment.message|raw|nl2br }}</p>
+    </div>
+</div>

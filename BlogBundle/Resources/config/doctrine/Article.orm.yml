@@ -1,0 +1,34 @@
+Pelshoff\BlogBundle\Entity\Article:
+    type: entity
+    repositoryClass: Pelshoff\BlogBundle\Entity\ArticleRepository
+    table: Pbb_Article
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    manyToOne:
+        category:
+            targetEntity: Category
+        author:
+            targetEntity: Author
+    oneToMany:
+        comments:
+            targetEntity: Comment
+            mappedBy: article
+    fields:
+        name:
+            type: string
+        url:
+            type: string
+        leader:
+            type: text
+        content:
+            type: text
+        publishTime:
+            type: datetime
+        lastUpdateTime:
+            type: datetime
+        createdTime:
+            type: datetime
+        active:
+            type: boolean

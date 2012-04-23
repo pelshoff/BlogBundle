@@ -1,0 +1,18 @@
+Pelshoff\BlogBundle\Entity\Category:
+    type: entity
+    table: Pbb_Category
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    oneToMany:
+        articles:
+            targetEntity: Article
+            mappedBy: category
+    fields:
+        name:
+            type: string
+        url:
+            type: string
+        active:
+            type: boolean

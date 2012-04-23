@@ -1,0 +1,6 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+    <h2>Oopsie! The article you were looking for could not be found!</h2>
+    <p>I'm very sorry, but the article "{{ article }}" is not available. Go to the <a href="{{ path('homepage')}}">homepage</a> for other articles.</p>
+{% endblock %}

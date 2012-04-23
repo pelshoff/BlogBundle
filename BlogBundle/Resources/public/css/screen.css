@@ -1,0 +1,107 @@
+article {
+    margin-bottom: 40px;
+}
+
+body {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+html {
+    overflow-y: scroll
+}
+
+img.captcha {
+    float: left;
+    margin-right: 15px;
+}
+
+#content {
+    padding-top: 2px;
+}
+
+.alert-flash {
+    box-shadow: 2px 2px 2px #999;
+    display: none;
+    font-weight: bold;
+    margin-left: 200px;
+    position: fixed;
+    top: 25px;
+    width: 560px;
+    z-index: 999;
+}
+
+.alert li {
+    margin-left: 10px;
+}
+
+.article-info-container {
+    line-height: 2;
+    vertical-align: middle;
+}
+
+.article-info {
+    padding-right: 6px;
+}
+
+.article-info:not(:first-child):before {
+    content: "|";
+    display: inline-block;
+    padding-right: 10px;
+}
+
+.comment {
+    border-top: 1px solid #E5E5E5;
+    min-height: 120px;
+    padding-bottom: 10px;
+}
+
+    .comment .avatarContainer {
+        text-align: center;
+    }
+
+        .comment .avatarContainer img {
+            box-shadow: 2px 2px 2px #999;
+            margin-top: 10px;
+        }
+
+    .comment .comment-header {
+        padding-top: 18px;
+        background-color: whiteSmoke;
+        height: 50px;
+    }
+
+    .comment .comment-header div {
+        height: 60px;
+    }
+
+    .comment .name {
+        display: block;
+        font-size: 150%;
+    }
+
+.control-group {
+    margin-top: 18px;
+    -webkit-margin-top-collapse: separate;
+}
+
+    .control-group textarea {
+        min-height: 150px;
+    }
+
+.input-xlarge {
+    width: 400px;
+}
+
+.nav > li > a.openComments {
+    margin-left: -34px;
+    text-align: center;
+}
+
+.pagination {
+    border-left: 1px solid #DDD;
+}
+
+.prettyprint li > span {
+    font-size: 12px;
+}
